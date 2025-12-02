@@ -1,6 +1,9 @@
 ﻿#region Input parsing
 string text = File.ReadAllText("input.txt");
 string[] data = text.Split(Environment.NewLine);
+List<(char Dir, int Offset)> comms = new();
+foreach (string line in data)
+    comms.Add((line[0], int.Parse(line.Substring(1))));
 #endregion
 
 #region Part1
