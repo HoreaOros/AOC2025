@@ -24,7 +24,7 @@ foreach(var interval in intervale)
                 r1 += nr;
     }
 }
-
+//4242 1234
 bool InvalidIDNum(long nr)
 {
     //int digits = (int)(Math.Abs(Math.Log10(nr))) + 1;
@@ -39,7 +39,7 @@ bool InvalidIDNum(long nr)
 int Digits(long nr)
 {
     int cnt = 0;
-    if(nr == 0) return 0;
+    if(nr == 0) return 1;
     while(nr > 0)
     {
         nr /= 10;
@@ -96,8 +96,9 @@ bool InvalidIDNum2(long nr)
     return false;
 }
 
-// 464446// 1, 2, 3
-
+// 464646// 1, 2, 3
+// 1212121212
+// 11111
 
 bool InvalidIDStr2(long nr)
 {

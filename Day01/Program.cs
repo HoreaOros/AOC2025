@@ -34,9 +34,6 @@ foreach (string s in data)
 }
 
 Console.WriteLine(r1);
-
-
-
 #endregion
 
 #region Part2
