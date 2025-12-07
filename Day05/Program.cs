@@ -39,13 +39,7 @@ Console.WriteLine(r1);
 #endregion
 
 #region Part2
-intervale.Sort((x, y) => 
-    { if (x.Left < y.Left) 
-            return -1;
-      else if (x.Left > y.Left) 
-            return 1; 
-      else return 0;
-    });
+intervale.Sort((x, y) => x.Left.CompareTo(y.Left));
 
 long r2 = 0;
 r2 = intervale[0].Right - intervale[0].Left + 1;

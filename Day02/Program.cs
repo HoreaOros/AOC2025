@@ -13,18 +13,29 @@ foreach (var item in data)
 #endregion
 
 #region Part1
-long r1 = 0;
-foreach(var interval in intervale)
+Console.WriteLine(Solve(InvalidIDNum));
+
+long Solve(Func<long, bool> invalidIDNum)
 {
-    for(long nr = interval.Left; nr <= interval.Right; nr++)
+    long r = 0;
+    foreach (var interval in intervale)
     {
-        //if (InvalidIDStr(nr))
-        //    r1 += nr;
-        if(InvalidIDNum(nr))
-                r1 += nr;
+        for (long nr = interval.Left; nr <= interval.Right; nr++)
+        {
+            //if (InvalidIDStr(nr))
+            //    r += nr;
+            if (invalidIDNum(nr))
+                r += nr;
+        }
     }
+    return r;
 }
+
 //4242 1234
+//11111
+//12345
+//121212
+//12112
 bool InvalidIDNum(long nr)
 {
     //int digits = (int)(Math.Abs(Math.Log10(nr))) + 1;
@@ -56,21 +67,10 @@ bool InvalidIDStr(long nr)
     return num.Substring(0, num.Length / 2) == num.Substring(num.Length / 2);
 }
 
-Console.WriteLine(r1);
 #endregion
 
 #region Part2
-long r2 = 0;
-foreach(var interval in intervale)
-{
-    for (long nr = interval.Left; nr <= interval.Right; nr++)
-    {
-        //if (InvalidIDStr2(nr))
-        //    r2 += nr;
-        if (InvalidIDNum2(nr))
-            r2 += nr;
-    }
-}
+Console.WriteLine(Solve(InvalidIDStr2));
 
 bool InvalidIDNum2(long nr)
 {
@@ -118,5 +118,4 @@ bool InvalidIDStr2(long nr)
     return false;
 }
 
-Console.WriteLine(r2);
 #endregion
