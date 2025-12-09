@@ -14,7 +14,9 @@ List<(int x, int y, long distance)> lst = new();
 for (int i = 0; i < N; i++)
     for (int j = i + 1; j < N; j++)
         lst.Add((i, j, EuclideanDistance(data[i], data[j])));
+
 lst.Sort((x, y) => x.distance.CompareTo(y.distance));
+
 long EuclideanDistance((long X, long Y, long Z) v1, (long X, long Y, long Z) v2)
 {
     return (v1.X - v2.X) * (v1.X - v2.X) +
